@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="GameBox — Ultimate Games & Tools. Play offline games and use everyday tools.">
+<title>GameBox — Ultimate Games &amp; Tools</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="topbar-row">
+      <button id="nav-back" class="icon-btn hidden" data-i18n-aria="back" aria-label="Back">‹</button>
+      <div id="topbar-title" class="topbar-title">GameBox</div>
+      <div class="topbar-actions">
+        <button id="btn-theme" class="icon-btn" data-i18n-aria="theme" aria-label="Theme">◐</button>
+        <button id="btn-lang" class="icon-btn lang-btn" aria-label="Language">EN</button>
+      </div>
+    </div>
+    <div class="search-wrap" id="search-wrap">
+      <input id="search" type="search" data-i18n-ph="search_ph" placeholder="Search games & tools…" autocomplete="off">
+    </div>
+  </header>
+
+  <main id="view"></main>
+
+  <nav id="tabbar">
+    <button class="tab active" data-tab="home"><span class="tab-ico">🏠</span><span data-i18n="tab_home">Home</span></button>
+    <button class="tab" data-tab="games"><span class="tab-ico">🎮</span><span data-i18n="tab_games">Games</span></button>
+    <button class="tab" data-tab="tools"><span class="tab-ico">🧰</span><span data-i18n="tab_tools">Tools</span></button>
+    <button class="tab" data-tab="profile"><span class="tab-ico">👤</span><span data-i18n="tab_profile">Profile</span></button>
+  </nav>
+
+  <div id="toast" class="toast hidden"></div>
+  <div id="modal-root"></div>
+</div>
+<script src="js/vendor/qrcode.js"></script>
+<script type="module" src="js/app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+}
+</script>
+</body>
+</html>
