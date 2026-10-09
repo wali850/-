@@ -23,3 +23,6 @@ TestResults.xml
 # Capacitor build output
 www/
 android/
+# Node
+node_modules/
+npm.log
