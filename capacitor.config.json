@@ -1,0 +1,11 @@
+{
+  "appId": "com.gamebox.app",
+  "appName": "GameBox",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#0b1020"
+  }
+}
